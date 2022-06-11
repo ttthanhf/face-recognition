@@ -4,7 +4,8 @@ This is the project face recognition using mtcnn to handle scan function, ultral
 
 How to setup!
 > git clone https://github.com/ttthanhf/face-recognition.git
->> Run "pip3 install -r requirements.txt"
+
+>Run "pip3 install -r requirements.txt"
 >>> Download weights : https://drive.google.com/drive/folders/1uimIp4K-AAjk5EQBuVI8j9OYBgJCSUES?usp=sharing (Put arcface_h5 folder and ultralight_onnx folder in weights folder)
 
 To start server:
