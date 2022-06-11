@@ -14,7 +14,11 @@ To start server:
 >*~If your computer has 16gb ram or more you can use docker to run this model !~*
 
 
+
+-----
+
 **Api:**
+
 To verify face: 
 >localhost:5000/api_v2 (Method: POST, Json: {path: "your path"})
 >> => Output {
