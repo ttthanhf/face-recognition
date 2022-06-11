@@ -9,6 +9,8 @@ How to setup!
 To start server:
 > Run "py main.py server start" (It will start with port 5000)
 
+>*~If your computer has 16gb ram or more you can use docker to run this model !~*
+
 
 
 
