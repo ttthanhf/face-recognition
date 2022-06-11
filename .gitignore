@@ -1,4 +1,6 @@
 face/face_data/*
+!face/face_data/*.md
+
 face/face_data_test
 face/face_test
 
