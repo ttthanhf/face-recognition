@@ -4,7 +4,7 @@ This is the project face recognition using mtcnn to handle scan function, ultral
 
 How to setup!
 > Run "pip3 install -r requirements.txt"
->> Download weights : https://drive.google.com/drive/folders/1uimIp4K-AAjk5EQBuVI8j9OYBgJCSUES?usp=sharing
+>> Download weights : https://drive.google.com/drive/folders/1uimIp4K-AAjk5EQBuVI8j9OYBgJCSUES?usp=sharing (Put arcface_h5 folder and ultralight_onnx folder in weights folder)
 
 To start server:
 > Run "py main.py server start" (It will start with port 5000)
