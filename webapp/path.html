@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PATH</title>
+  <div class="result">
+    Result: <h1 id="here"></h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+ <script>
+  //  //
+  //  // fetch
+    const url = 'http://localhost:5000/api_v2'
+    const path = 'C:\\MyData\\Code\\project\\FaceRecognition\\FaceRecognition\\face\\face_test\\minh.jpg'
+    
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8"
+      },
+      body: JSON.stringify({ 'path' : path })
+    }
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      // .then(data => document.getElementById('here').innerText = data.name)
+
+    axios.post(url, { 'path' : path })
+      .then(data => console.log(data.data))
+      
+  // axios.post(url, { 'path' : 'C:\\Users\\ThanhF\\Downloads\\a.jpg', 'name': 'duca' })
+  //     .then(data => console.log(data.data))
+ </script>
+</body>
+</html>

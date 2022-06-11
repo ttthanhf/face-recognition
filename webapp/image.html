@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IMAGE</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form enctype="multipart/form-data" onsubmit="return false">
+        <input type="file" id="file" name="file">
+        <input type=submit value=Upload>
+    </form>
+ <script>
+   const url = 'http://127.0.0.1:5000/api_v1'
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let data = new FormData(form);
+    axios({
+          method: "post",
+          url: url,
+          data: data,
+          })
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            throw err;
+          });
+    });
+ </script>
+</body>
+</html> -->
