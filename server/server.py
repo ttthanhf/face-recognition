@@ -116,7 +116,7 @@ def api3():
     if request.method == 'POST':
         start_time = time.time()
         url = request.json.get('url')
-        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/imagea.jpg'
+        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/image.jpg'
         createImageURL(path,url)
         status, result = Action(str(path))
         return {
@@ -131,7 +131,7 @@ def api3_create():
         start_time = time.time()
         name = request.json.get('name')
         url = request.json.get('url')
-        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/imagea.jpg'
+        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/image.jpg'
         createImageURL(path,url)
         status = Create_v3(path, name)
         return {
