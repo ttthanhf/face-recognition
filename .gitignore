@@ -11,7 +11,8 @@ webapp/package-lock.json
 weights/arcface_h5/*.h5
 weights/ultralight_onnx/*.onnx
 
-
 image.jpg
-save
+
+save/arfface
+save/onnx
 
