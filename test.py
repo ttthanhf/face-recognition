@@ -8,7 +8,7 @@ def test_zone():
     result = Action(dir)
     print(result)
     print(time.time() - start_time)
-test_zone()
+# test_zone()
 
 # from handle.action import Action
 # start_time = time.time()
@@ -36,3 +36,7 @@ test_zone()
 # a = Action('C:\\MyData\\myDesktop\\gdsa.jpg')
 
 # print(a)
+
+# print(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
+import requests

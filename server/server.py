@@ -1,6 +1,6 @@
 from main.action import Action
 from scan.scan import Scan
-from server.handle import List, Create_v1, Create_v2, Rename, Delete
+from server.handle import List, Create_v1, Create_v2, Create_v3, Rename, Delete, createImageURL
 # from delete import Delete
 
 import time
@@ -109,8 +109,40 @@ def api2_create():
         'status': status,
         'time_excute': time.time() - start_time
         }
-    
+
+#api version 3 is using url and name to interact with server
+@app.route('/api_v3', methods=['GET','POST'])
+def api3():
+    if request.method == 'POST':
+        start_time = time.time()
+        url = request.json.get('url')
+        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/imagea.jpg'
+        createImageURL(path,url)
+        status, result = Action(str(path))
+        return {
+            'status': status,
+            'name': result,
+            'time_excute': time.time() - start_time
+        }
+
+@app.route('/api_v3/create', methods=['GET','POST'])
+def api3_create():
+    if request.method == 'POST':
+        start_time = time.time()
+        name = request.json.get('name')
+        url = request.json.get('url')
+        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/imagea.jpg'
+        createImageURL(path,url)
+        status = Create_v3(path, name)
+        return {
+            'status': status,
+            'time_excute': time.time() - start_time
+        }
+
+
+#other    
 @app.route('/api_v2/scan')
+@app.route('/api_v3/scan')
 def scan_function():
     start_time = time.time()
     total, addFile, existFile = Scan()
@@ -122,10 +154,12 @@ def scan_function():
     }
 
 @app.route('/api_v2/list')
+@app.route('/api_v3/list')
 def list_function():
     list = List()
     return jsonify(list)
 
+@app.route('/api_v3/rename', methods=['POST'])
 @app.route('/api_v2/rename', methods=['POST'])
 def rename_function():
     start_time = time.time()
@@ -137,7 +171,7 @@ def rename_function():
         'time_excute': time.time() - start_time
     }
 
-#until now, delete function will not available because a dev scary about mistake can delete all project :)
+@app.route('/api_v3/delete', methods=['POST'])
 @app.route('/api_v2/delete', methods=['POST'])
 def delete_function():
     start_time = time.time()
@@ -147,7 +181,6 @@ def delete_function():
         'status': status,
         'time_excute': time.time() - start_time
     }
-
 
 def start():
     app.run(host="0.0.0.0") 

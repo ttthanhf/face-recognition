@@ -1,6 +1,7 @@
 import os
 import cv2
 import shutil
+import requests
 
 face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '\\face\\face_data'
 
@@ -65,6 +66,25 @@ def Create_v2(path_input, name):
             return 'name already exist !'
     else:
         return 'Name contain . is not allowed'
+
+def Create_v3(path_input, name):
+    if not '.' in name:
+        path = face_folder + '\\' + name
+        if not os.path.exists(path):
+            os.mkdir(path)
+            img_src = cv2.imread(path_input)
+            cv2.imwrite(path + '\\' + name + '.jpg', img_src)
+            return 'Create success !'
+        else:
+            return 'name already exist !'
+    else:
+        return 'Name contain . is not allowed'
+
+def createImageURL(path, url):
+    img_data = requests.get(url).content
+    with open(path, 'wb') as handler:
+        handler.write(img_data)
+    return 0
 
             
             
