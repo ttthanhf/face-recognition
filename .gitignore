@@ -16,3 +16,5 @@ image.jpg
 save/arfface
 save/onnx
 
+__pycache__
+*.pyc
