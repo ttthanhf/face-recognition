@@ -1,4 +1,9 @@
 webapp
 test.py
-*.md
 save
+__pycache__
+*.pyc
+*.md
+image.jpg
+.gitignore
+
