@@ -7,3 +7,23 @@ __pycache__
 image.jpg
 .gitignore
 
+face/face_data/*
+!face/face_data/*.md
+
+face/face_data_test
+face/face_test
+
+webapp/node_modules
+webapp/package.json
+webapp/package-lock.json
+
+weights/arcface_h5/*.h5
+weights/ultralight_onnx/*.onnx
+
+image.jpg
+
+save/arfface
+save/onnx
+
+__pycache__
+*.pyc
