@@ -3,7 +3,7 @@ import cv2
 import shutil
 import requests
 
-face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '\\face\\face_data'
+face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '/face/face_data'
 
 def List():
     labels = []
@@ -14,10 +14,10 @@ def List():
     return labels
 
 def Rename(oldname, newname):
-    path = face_folder + '\\' + oldname
+    path = face_folder + '/' + oldname
     if os.path.exists(path):
         if not oldname == newname:
-            os.rename(path , face_folder + '\\' + newname)
+            os.rename(path , face_folder + '/' + newname)
             return 'Rename sucess'
         else:
             return 'oldname and newname are the same'
@@ -29,7 +29,7 @@ def Delete(name):
     if not name == "":
         if not '/' in name:
             if not '\\' in name:
-                path = face_folder + '\\' + name
+                path = face_folder + '/' + name
                 if os.path.exists(path):
                     shutil.rmtree(path)
                     return 'Delete sucess'
@@ -44,10 +44,10 @@ def Delete(name):
 
 def Create_v1(file, name):
     if not '.' in name:
-        path = face_folder + '\\' + name
+        path = face_folder + '/' + name
         if not os.path.exists(path):
             os.mkdir(path)
-            file.save(path + '\\' + name + '.jpg')
+            file.save(path + '/' + name + '.jpg')
             return 'Create success !'
         else:
             return 'name already exist !'
@@ -56,11 +56,11 @@ def Create_v1(file, name):
 
 def Create_v2(path_input, name):
     if not '.' in name:
-        path = face_folder + '\\' + name
+        path = face_folder + '/' + name
         if not os.path.exists(path):
             os.mkdir(path)
             img_src = cv2.imread(path_input)
-            cv2.imwrite(path + '\\' + name + '.jpg', img_src)
+            cv2.imwrite(path + '/' + name + '.jpg', img_src)
             return 'Create success !'
         else:
             return 'name already exist !'
@@ -69,11 +69,11 @@ def Create_v2(path_input, name):
 
 def Create_v3(path_input, name):
     if not '.' in name:
-        path = face_folder + '\\' + name
+        path = face_folder + '/' + name
         if not os.path.exists(path):
             os.mkdir(path)
             img_src = cv2.imread(path_input)
-            cv2.imwrite(path + '\\' + name + '.jpg', img_src)
+            cv2.imwrite(path + '/' + name + '.jpg', img_src)
             return 'Create success !'
         else:
             return 'name already exist !'
