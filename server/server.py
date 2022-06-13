@@ -46,9 +46,8 @@ def api1():
         if filename.endswith('.jpg') or filename.endswith('.png') or filename.endswith('.jpeg'):
             path = os.path.join(app.config['UPLOAD_FOLDER'], 'image.jpg')
             file.save(path)
-            path_img = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '\\' + 'image.jpg'
+            path_img = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '/image.jpg'
             status, result = Action(path_img) #main handle and recieve result
-            print(result)
             return {
                 'status': status,
                 'name': result,
@@ -141,6 +140,7 @@ def api3_create():
 
 
 #other    
+@app.route('/api_v1/scan')
 @app.route('/api_v2/scan')
 @app.route('/api_v3/scan')
 def scan_function():
@@ -153,12 +153,14 @@ def scan_function():
         'time_excute': time.time() - start_time
     }
 
+@app.route('/api_v1/list')
 @app.route('/api_v2/list')
 @app.route('/api_v3/list')
 def list_function():
     list = List()
     return jsonify(list)
 
+@app.route('/api_v1/rename', methods=['POST'])
 @app.route('/api_v3/rename', methods=['POST'])
 @app.route('/api_v2/rename', methods=['POST'])
 def rename_function():
@@ -171,6 +173,7 @@ def rename_function():
         'time_excute': time.time() - start_time
     }
 
+@app.route('/api_v1/delete', methods=['POST'])
 @app.route('/api_v3/delete', methods=['POST'])
 @app.route('/api_v2/delete', methods=['POST'])
 def delete_function():

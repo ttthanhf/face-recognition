@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
         <input type=submit value=Upload>
     </form>
  <script>
-   const url = 'http://127.0.0.1:5000/api_v1'
+   const url = 'http://localhost:5000/api_v1'
   const form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@
           data: data,
           })
           .then((res) => {
-            console.log(res);
+            localStorage.setItem(res, res);
           })
           .catch((err) => {
             throw err;
@@ -30,4 +30,4 @@
     });
  </script>
 </body>
-</html> -->
+</html>
