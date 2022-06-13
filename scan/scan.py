@@ -3,7 +3,7 @@ import os
 from scan.action import Process
 from numpy import save
 
-face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '\\face\\face_data'
+face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '/face/face_data'
 
 def Scan():
     totalFolder = 0

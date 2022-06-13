@@ -27,7 +27,7 @@ def a():
 def api_result():
     start_time = time.time()
 
-    dir = str(os.path.abspath(os.path.dirname(__file__))) + '\\face\\face_test\\duyne.jpg'
+    dir = str(os.path.abspath(os.path.dirname(__file__))) + '/face/face_test/duyne.jpg'
 
     status, result = Action(dir)
 
@@ -133,7 +133,7 @@ def api3_create():
         path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/image.jpg'
         createImageURL(path,url)
         status = Create_v3(path, name)
-        return {
+        return {    
             'status': status,
             'time_excute': time.time() - start_time
         }

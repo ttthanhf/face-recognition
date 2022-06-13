@@ -7,8 +7,6 @@ from main.alignFace import Align_face
 
 import cv2
 
-face_folder = 'C:\\MyData\\Code\\project\\FaceRecognition\\projectAI_F-Code\\face\\face_data'
-
 def Process(dir):
     img = load_img(dir)
     img = Align_face(img)

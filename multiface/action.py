@@ -5,7 +5,7 @@ from numpy import load
 import cv2
 import os
 
-face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '\\face\\face_data'
+face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '/face/face_data'
 
 def Process(dir):
     data_array = []

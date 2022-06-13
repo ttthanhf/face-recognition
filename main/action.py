@@ -6,7 +6,7 @@ import os
 from numpy import load
 # import time
 
-face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '\\face\\face_data'
+face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '/face/face_data'
 
 def Process(dir):
     img = load_img(dir)
