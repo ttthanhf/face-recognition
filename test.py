@@ -4,7 +4,7 @@ def test_zone():
     
     from main.action import Action
     start_time = time.time()
-    dir = 'C:\\MyData\\Code\\project\\FaceRecognition\\FaceRecognition\\face\\face_test\\7.jpg'
+    dir = 'Desktop/286192248_1060591568201882_4876699267291452572_n.jpg'
     result = Action(dir)
     print(result)
     print(time.time() - start_time)

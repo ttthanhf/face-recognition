@@ -103,7 +103,10 @@ def Detect_face(image): #0.022s
     return 0, False
     
 def crop_face(image, boxes):
-    for i in range(boxes.shape[0]):
-        box = boxes[i, :]
-        img_crop = image[box[1]: box[3], box[0]: box[2]]
+    # for i in range(boxes.shape[0]):
+    #     box = boxes[i, :]
+    #     img_crop = image[box[1]: box[3], box[0]: box[2]]
+    # return img_crop
+    x1, y1, x2, y2 = boxes[0]
+    img_crop = image[y1: y2, x1: x2]
     return img_crop
