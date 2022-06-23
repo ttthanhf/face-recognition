@@ -1,6 +1,6 @@
 from main.action import Action
 from scan.scan import Scan
-from server.handle import List, Create_v1, Create_v2, Create_v3, Rename, Delete, createImageURL
+from server.handle import List, Create_v1, Create_v2, Create_v3, Add_v3, Rename, Delete, createImageURL
 # from delete import Delete
 
 import time
@@ -124,7 +124,7 @@ def api3():
             'time_excute': time.time() - start_time
         }
 
-@app.route('/api_v3/create', methods=['GET','POST'])
+@app.route('/api_v3/create', methods=['POST'])
 def api3_create():
     if request.method == 'POST':
         start_time = time.time()
@@ -133,6 +133,21 @@ def api3_create():
         path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/image.jpg'
         createImageURL(path,url)
         status = Create_v3(path, name)
+        return {    
+            'status': status,
+            'time_excute': time.time() - start_time
+        }
+
+        
+@app.route('/api_v3/create/add', methods=['POST'])
+def api3_add():
+    if request.method == 'POST':
+        start_time = time.time()
+        name = request.json.get('name')
+        url = request.json.get('url')
+        path = os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + '/image.jpg'
+        createImageURL(path,url)
+        status = Add_v3(path, name)
         return {    
             'status': status,
             'time_excute': time.time() - start_time

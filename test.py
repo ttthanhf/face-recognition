@@ -40,3 +40,10 @@ def test_zone():
 # print(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 import requests
+# for root, dirs, files in os.walk(face_folder):
+#             for file in files:
+#                 if file.endswith('.npy'):
+#                     label = os.path.basename(root)
+#                     # data = load(str(root) + '/' + ' .npy')
+#                     for npy_data in glob(str(root) + '/' + "*.npy"):
+#                         print(npy_data)

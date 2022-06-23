@@ -1,4 +1,5 @@
 import os
+from utilities.generate import getTimeStamp
 
 from scan.action import Process
 from numpy import save
@@ -13,12 +14,21 @@ def Scan():
     for root, dirs, files in os.walk(face_folder):
         if(os.path.basename(root) != os.path.basename(face_folder)):
             totalFolder += 1
-            if(len(files) == 1):
-                for file in files:
-                    path = os.path.join(root, file)
+            count_jpg = 0
+            count_npy = 0
+            for file in files:
+                if file.endswith(".jpg"):
+                    count_jpg += 1
+                else:
+                    count_npy += 1
+            if(count_jpg > count_npy):
+                totalJpgNotData = count_jpg - count_npy
+                lengthFolder = len(files)
+                for i in range(lengthFolder-totalJpgNotData,lengthFolder):
+                    path = os.path.join(root, files[i])
                     data = Process(path)
-                    save(str(root) + '/' + 'data.npy', data)
-                addFile += 1
+                    save(str(root) + '/' + files[i] + '.npy', data)
+                    addFile += 1
             else:
                 existFile += 1
     print('Finish !')

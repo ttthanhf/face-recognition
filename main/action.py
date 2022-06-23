@@ -6,9 +6,13 @@ import os
 from numpy import load
 # import time
 
+# from models.mtcnn.mtcnnDetect import crop_face, load_img
+# from main.alignFace import Align_face
+
 face_folder = str(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))) + '/face/face_data'
 
 def Process(dir):
+    #ultralight
     img = load_img(dir)
     # img = Align_face(img)
     boxes, status = Detect_face(img)
@@ -19,6 +23,14 @@ def Process(dir):
         return data, True
     else:
         return 0, False
+        
+    #mtcnn
+    # img = load_img(dir)
+    # img = Align_face(img)
+    # img = crop_face(img)
+    # img = cv2.resize(img, (112, 112))
+    # data = Represent(img)
+    # return data, True
 
 
 def Action(dir):
@@ -28,10 +40,10 @@ def Action(dir):
         for root, dirs, files in os.walk(face_folder):
             for file in files:
                 if file.endswith('.npy'):
-                    label = os.path.basename(root)
-                    data = load(str(root) + '/' + 'data.npy')
+                    data = load(str(root) + '/' + file)
                     distance_cosine = findCosineDistance(data_img, data)
                     if(distance_cosine < 0.4):
+                        label = os.path.basename(root)
                         return 'Not thing wrong' ,label
         return 'Cannot find face in data', 0
     return 'Cannot detect face', 0
