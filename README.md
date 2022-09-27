@@ -7,7 +7,7 @@
 
 This is the project face recognition using MTCNN to handle scan function, ultralight to detect face and arcface to recognition.
 
-> ! => To avoid unexpected errors, use the python version 3.7.9 <= !
+
 
 <br>
 
@@ -83,6 +83,8 @@ This is the project face recognition using MTCNN to handle scan function, ultral
 
 # Note
 ! You need to scan face before create new face !
+<br><br>
+! => To avoid unexpected errors, use the python version 3.7.9 <= !
 <br>
 
 # Reference : 
