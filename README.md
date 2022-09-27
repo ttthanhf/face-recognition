@@ -1,7 +1,9 @@
 # Face Regconition
+<br>
 <div align='center'>
-<img src="https://img.shields.io/badge/Python-3.7.9-green"> <img src="https://img.shields.io/badge/Status-Working-red"> <img src="https://img.shields.io/badge/Docker-Yes-green"> <img src="https://img.shields.io/badge/Test_In_Server-Yes-green"> <img src="https://img.shields.io/badge/Testing-Done-green"> <img src="https://img.shields.io/badge/API-Yes-green">
+<img src="https://img.shields.io/badge/Python-3.7.9-blue"> <img src="https://img.shields.io/badge/Build-Passing-green"> <img src="https://img.shields.io/badge/Docker-Yes-green"> <img src="https://img.shields.io/badge/Test_In_Server-Yes-green"> <img src="https://img.shields.io/badge/Testing-Done-green"> <img src="https://img.shields.io/badge/API-Yes-green">
 </div>
+<br>
 
 This is the project face recognition using MTCNN to handle scan function, ultralight to detect face and arcface to recognition.
 
