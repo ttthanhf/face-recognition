@@ -5,7 +5,7 @@ from onnx_tf.backend import prepare
 import numpy as np
 # import time
 
-onnx_path = './weights/ultralight_onnx/test.onnx'
+onnx_path = './weights/ultralight_onnx/ultralight.onnx'
 onnx_model = onnx.load(onnx_path)
 predictor = prepare(onnx_model)
 ort_session = ort.InferenceSession(onnx_path)

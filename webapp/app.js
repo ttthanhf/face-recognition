@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const axios = require('axios');
 
-const path = 'C:\\MyData\\Code\\project\\FaceRecognition\\FaceRecognition\\image.jpg'
+const path = ''
 const url = 'http://localhost:5000/api_v2'
 
 app.get('/axios', async function(req, res) {

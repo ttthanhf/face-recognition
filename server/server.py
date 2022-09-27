@@ -1,7 +1,6 @@
 from main.action import Action
 from scan.scan import Scan
 from server.handle import List, Create_v1, Create_v2, Create_v3, Add_v3, Rename, Delete, createImageURL
-# from delete import Delete
 
 import time
 import os

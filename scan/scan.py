@@ -33,4 +33,3 @@ def Scan():
                 existFile += 1
     print('Finish !')
     return totalFolder, addFile, existFile
-# Scan()

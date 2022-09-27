@@ -76,6 +76,8 @@ To delete face:
 
 if you have any problem, you can contact to me ! :)
 
+Link source: https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB, https://github.com/ipazc/mtcnn, https://github.com/serengil/deepface, https://github.com/davidsandberg/facenet/
+
 
 
 

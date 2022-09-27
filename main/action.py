@@ -1,6 +1,6 @@
 from models.ultralight.ultralightDetect import crop_face, load_img, Detect_face
 from models.arcface.arcfaceVerify import Represent
-from main.distance import findCosineDistance
+from main.distance import cosineDistance
 import cv2
 import os
 from numpy import load
@@ -41,7 +41,7 @@ def Action(dir):
             for file in files:
                 if file.endswith('.npy'):
                     data = load(str(root) + '/' + file)
-                    distance_cosine = findCosineDistance(data_img, data)
+                    distance_cosine = cosineDistance(data_img, data)
                     if(distance_cosine < 0.4):
                         label = os.path.basename(root)
                         return 'Not thing wrong' ,label

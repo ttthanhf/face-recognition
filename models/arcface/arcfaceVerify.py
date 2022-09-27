@@ -4,7 +4,7 @@ from keras.models import load_model
 
 # import time
 
-model = load_model('./weights/arcface_h5/arcface_model.h5', compile=False)
+model = load_model('./weights/arcface_h5/arcface.h5', compile=False)
 
 def Represent(image):
     
