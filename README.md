@@ -1,7 +1,7 @@
 # Face Regconition
 <br>
 <div align='center'>
-<img src="https://img.shields.io/badge/Python-3.7.9-blue"> <img src="https://img.shields.io/badge/Build-Passing-green"> <img src="https://img.shields.io/badge/Docker-Yes-green"> <img src="https://img.shields.io/badge/Test_In_Server-Yes-green"> <img src="https://img.shields.io/badge/Testing-Done-green"> <img src="https://img.shields.io/badge/API-Yes-green">
+<img src="https://img.shields.io/badge/Python-3.7.9-blue"> <img src="https://img.shields.io/badge/Build-Passing-green"> <img src="https://img.shields.io/badge/Docker-Yes-green"> <img src="https://img.shields.io/badge/Test_In_Server-Yes-green"> <img src="https://img.shields.io/badge/Testing-Done-green"> <img src="https://img.shields.io/badge/API-Yes-green"> <img src="https://img.shields.io/badge/Only-CPU-orange">
 </div>
 <br>
 
@@ -10,7 +10,9 @@ This is the project face recognition using [MTCNN](https://github.com/ipazc/mtcn
 <br>
 
 # Introduction
-- Learning similarity, CosFace (Cosine Distance)
+
+In this face recognition problem, I use a [Learning Similarity](https://en.wikipedia.org/wiki/Similarity_learning) method so that I don't have to retrain the model when add a new face.
+
 <br>
 
 # How to setup!
@@ -150,18 +152,14 @@ url: http://localhost:5000/api_v3/scan (method GET)
 
 <br>
 
-
-
-
-
-
 *Example in folder webapp (it using fetch or axios)
-
 
 # Note
 ! You need to scan face before create new face !
 <br><br>
 ! => To avoid unexpected errors, use the python version 3.7.9 <= !
+<br><br>
+Ff you are in python 3.7.9 and still not working, delete that python version and reinstall it. [Python 3.7.9](https://www.python.org/downloads/release/python-379/)
 <br>
 
 # Reference : 
