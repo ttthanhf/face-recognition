@@ -106,17 +106,57 @@ $ py main.py server start
 <br>
 
 # Example
+To easily interact with users as well as being able to add one project to another, I use RESTful API to interact with Model.
+
+*I use POSTMAN for this example with api_v3*
+
+<div align="center">
 POSTMAN
-<img src="">
+            
+<strong>Step 1</strong>: create a new face to start recognition. Here I use the image of Harry Potter character.
+            
+*(link: https://gocsaoviet.com/wp-content/uploads/2021/06/photo-1-1622984031118226200693.jpg)*
+            
+<img src="./images/example1.PNG">
+</div>
+<br>
+
+```
+url: http://localhost:5000/api_v3/create (method POST)
+```   
+
+<br>
+
+<div align="center">
+<strong>Step 2</strong> : Use "scan" to generate the face data into database.
+            
+<img src="./images/example2.PNG">
+</div>
+<br>
+
+```
+url: http://localhost:5000/api_v3/scan (method GET)
+```
+
+<br>
+
+<div align="center">
+<strong>Step 3</strong> : Result.
+            
+*(link: https://vtv1.mediacdn.vn/thumb_w/650/2019/9/3/17988102-7420621-the8bookpotterseriesandotherrelatedstoriesaudiorecordi-a-61567460030727-15674958768921527956477.jpg)*
+
+<img src="./images/example3.PNG">
+</div>
+
+<br>
+
+
+
+
 
 
 *Example in folder webapp (it using fetch or axios)
 
-*You can using Postman ! (set body to raw and using method and send it with json)
->ex: 
-{
-    "name": "Baka"
-}
 
 # Note
 ! You need to scan face before create new face !
