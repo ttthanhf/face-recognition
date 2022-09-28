@@ -20,7 +20,7 @@ def after_request(response):
  
 @app.route('/')
 def a():
-    return 'This project made by Tran Tan Thanh'
+    return 'Author Tran Tan Thanh'
 
 @app.route('/test')
 def api_result():
