@@ -5,22 +5,29 @@
 </div>
 <br>
 
-This is the project face recognition using MTCNN to handle scan function, ultralight to detect face and arcface to recognition.
-
-
+This is the project face recognition using [MTCNN](https://github.com/ipazc/mtcnn) to handle scan function, [ultralight](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB) to detect face and [ArcFace](https://github.com/deepinsight/insightface) to recognition.
 
 <br>
 
+# Introduction
+- Learning similarity, CosFace (Cosine Distance)
+<br>
+
 # How to setup!
-- Do "git clone https[]()://github.com/ttthanhf/face-recognition.git"
-- cd to the folder "face-recognition"
-- Run "pip3 install -r requirements.txt"
+```
+$ git clone https://github.com/ttthanhf/face-recognition.git
+```
+```
+$ pip3 install -r requirements.txt"
+```
 - Download weights : [Click here to download weights](https://drive.google.com/drive/folders/1uimIp4K-AAjk5EQBuVI8j9OYBgJCSUES?usp=sharing) (Put arcface_h5 folder and ultralight_onnx folder in weights folder)
 <br><br><br>
 
 # To start server:
-- cd to your folder "face-recognition"
-- Run "py main.py server start" (It will start with port 5000)
+```
+$ py main.py server start
+```
+> (It will start localhost with port 5000)
 
 >*~If your computer has 16gb ram or more you can use docker to run this model !~*
 
@@ -64,25 +71,43 @@ This is the project face recognition using MTCNN to handle scan function, ultral
 
 - /delete (method POST) : delete data user
 > Input: json ({name: "your name"})
-
-> => Output { status , execute_time }
+```
+> => Output { status , 
+              execute_time 
+            }
+```
 <br>
 
 - /scan (method: GET) : generate data face
-> => Output { add , exist , total , execute_time }
+```
+> => Output { add , 
+              exist , 
+              total , 
+              execute_time 
+            }
+```
 <br>
 
 - /list (method: GET) : show all user
-> => Output { *json list* }
+```
+> => Output { 
+               *json list* 
+            }
+```
 <br>
 
 - /rename (method POST) : rename user in database
 > Input: Json ({oldname: "your oldname", newname: "your newname"})
-
-> => Output { status , execute_time }
+```
+> => Output { status , 
+              execute_time 
+            }
+```
 <br>
 
 # Example
+POSTMAN
+<img src="">
 
 
 *Example in folder webapp (it using fetch or axios)
@@ -100,14 +125,18 @@ This is the project face recognition using MTCNN to handle scan function, ultral
 <br>
 
 # Reference : 
-- https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB
 - https://github.com/ipazc/mtcnn
 - https://github.com/serengil/deepface
+- https://github.com/deepinsight/insightface
 - https://github.com/davidsandberg/facenet/
+- https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB
 - https://viblo.asia/p/paper-explained-some-face-recognition-approaches-facenet-arcface-cosface-Do754zgLZM6
 
 # Contact
 if you have any problem, you can contact to me ! :)
+
+# License
+[MIT](LICENSE)
 
 
 
