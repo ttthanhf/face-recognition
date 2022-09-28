@@ -176,7 +176,8 @@ Ff you are in python 3.7.9 and still not working, delete that python version and
 if you have any problem, you can contact to me ! :)
 
 # License
-[MIT](LICENSE)
+This project is licensed under the MIT License - see [MIT LICENSE](LICENSE) for more details.
+
 
 
 
