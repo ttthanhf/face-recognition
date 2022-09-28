@@ -38,16 +38,28 @@ This is the project face recognition using MTCNN to handle scan function, ultral
 
 - / (method: POST) : recognition face
 > Input: (*look*)
-
-> => Output { status , name , execute_time }
+```
+=> Output { status , 
+            name , 
+            execute_time 
+          }
+```
 <br>
 
 - /create (method: POST) : insert new image
-> => Output { status , execute_time }
+```
+=> Output { status , 
+            execute_time
+          }
+```
 <br>
 
 - /add (method: POST) : add more image
-> => Output { status , execute_time }
+```
+=> Output { status , 
+            execute_time 
+          }
+```
 <br>
 
 - /delete (method POST) : delete data user
