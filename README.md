@@ -7,7 +7,7 @@
 
 This is the project face recognition using [MTCNN](https://github.com/ipazc/mtcnn) to handle scan function, [ultralight](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB) to detect face and [ArcFace](https://github.com/deepinsight/insightface) to recognition.
 
-Developed by F-Code team
+Supported by the F-Code club.
 
 <br>
 
