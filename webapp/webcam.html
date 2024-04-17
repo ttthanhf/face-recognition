@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 50px 0;   
+        }
+        span {
+            font-size: 50px;
+            color: green;
+        }
+        input {
+            font-size: 50px;
+        }
+        button {
+            font-size: 20px;
+        }
+        div {
+            width: 100%;
+            text-align: center;
+        }
+        video {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>F-Code Face Recognition</span><br>
+        <video autoplay="true"></video><br><br>
+        <input type="text" id="name" autocomplete="off"><br><br>
+        <button id="create">Cheese</button>
+    </div>
+    <script>
+        var video = document.querySelector("video") 
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext("2d");
+
+        var data = "";
+
+        //function
+        function downloadImage() {
+            var a = document.createElement('a');
+            a.href = data;
+            a.download = "myImage.jpeg";
+            document.body.appendChild(a);
+            a.click();
+        }
+
+        function getCapture() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0);
+            data = canvas.toDataURL('image/png');
+            downloadImage()
+        }
+
+        //click listener
+        document.querySelector("#create").addEventListener("click", function() {
+            getCapture()
+        })
+
+        //Video
+        navigator.mediaDevices.getUserMedia({video: true}).then(function(stream) {
+            video.srcObject = stream;
+        })
+    </script>
+</body>
+</html>
